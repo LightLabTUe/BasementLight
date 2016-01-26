@@ -26,6 +26,8 @@ In order to control the installation you will need an Arduino with a Dmx interfa
 4. Turn on the installation (There is a small door behind the big pillar, enter and look for the switch).
 
 ## Software
+
+### How to setup your software:
 1. Download the example code from the repository and put it in your Arduino sketchbook. To find the location of your sketchbook: In the arduino IDE go to "Preferences". The location is in the first field "Sketchbook location:".
 2. Open the example code
 3. Upload!
@@ -53,13 +55,13 @@ Use this function to set the brightness of a specific set of warm or cool ledstr
 - b: the brightness you want to set the strips to. This should be a value between 0 - 255.
 
 #### updateFadingAnimation(warm)
-- warm: allows you to set the animation to a warm or a cool light
+- warm: set fading light to be cool or warm
 
 Currently this is a fading animation that fades a light from left to right. This animation should be called in the loop at all times. It doesn't work if your program uses DELAYS! 
 
 This function can serve as the base for any fading animation. It counts from 0 to 255 and then increases the currentStep. This allows you to slowly increase the brightness of one step and then go to the next step, which might be the decreasing of that section.
 
-currentStep step doesn't reset when it reaches the end of the sections (which is at 7), it simple keeps incrementing. A modulo is used to calculate the current position. So currently this function does something like this:
+currentStep step doesn't reset when it reaches the end of the sections (which is at 7), it simple keeps incrementing. A modulo is used to calculate the current position based on the currentStep. So currently each step this function does something like this:
 - currentStep: decreasing from 255 to 0
 - currentStep + 1: increasing from 127 to 255
 - currentStep + 2: increasing from 0 to 127
