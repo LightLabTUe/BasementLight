@@ -42,11 +42,14 @@ Another option is to use the USB port on your computer. For this option you will
 
 - A USB to DMX serial interface* (QuickDMX D512)
 - QuickDMX: http://download.thelightingcontroller.com/software/V7/QuickDmx/
-- Optional: the example: 
+- Optional: the example: https://github.com/LightLabTUe/BasementLight/tree/master/USBtoDMX
 
 If you are a student at the TU/e you may borrow a this interface from the lightlab (scroll down for email address). 
 
-* Other DMX interfaces will also work, just not with the example.
+* Other DMX interfaces will also work, just not with the example. *
+
+- How to get the example working: https://github.com/LightLabTUe/BasementLight/tree/master/USBtoDMX
+- Tutorials on quickDMX: http://forum.thelightingcontroller.com/viewtopic.php?f=63&t=3077
 
 # Help
 
