@@ -11,8 +11,8 @@ Each strip can be individually controlled with the DMX protocol. There are sever
 # Arduino
 Use an Arduino to control the installation. This example features three example animations and some powerful functions to create your own programs.
 
-## hardware
-In order to control the installation you will need an Arduino with a Dmx interface. If you are a student at the TU/e you may borrow a Dmx interface from the lightlab (scroll down for email address). 
+## Hardware
+In order to control the installation you will need an Arduino with a Dmx interface. If you are a student at the TU/e you may borrow a Dmx interface from the lightlab (scroll down for email address).
 
 We used the following hardware:
 1. Arduino Uno.
@@ -25,7 +25,7 @@ The next step is to setup your hardware:
 3. If you are going to use the example code then make sure you have the buttons connected to pin 8, 9 and 10 of the Arduino.
 4. Turn on the installation (There is a small door behind the big pillar, enter and look for the switch).
 
-## software
+## Software
 1. Download the example code from the repository and put it in your Arduino sketchbook. To find the location of your sketchbook: In the arduino IDE go to "Preferences". The location is in the first field "Sketchbook location:".
 2. Open the example code
 3. Upload!
