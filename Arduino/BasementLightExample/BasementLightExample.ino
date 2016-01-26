@@ -103,6 +103,16 @@ void loop() {
     }
   }
 
+  // if all buttons are pressed, then turn off
+  boolean allPressed = true;
+  for(int y = 0; y < 3; y++) {
+    if(!buttonState[y]) allPressed = false;
+  }
+  if(allPressed) {
+    setBrightnessAll(0);
+    state = 255;
+  }
+
   // Put animation updates here
   // The animations are handled with millis
   // This will allow you to do other stuff while the animation is running
