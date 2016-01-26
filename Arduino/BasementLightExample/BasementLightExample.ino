@@ -23,8 +23,6 @@
 // Dmx vars
 #define DmxChannels 48
 byte DmxChannelValues[DmxChannels];
-int warmValues[7];
-int coldValues[7];
 
 // buttons vars
 byte buttonPins[3] = {8, 9, 10};
@@ -37,28 +35,30 @@ boolean buttonState[3];
 byte state = 255;
 
 void setup() {
+  // init the button pins
   for (int i = 0; i < 3; i++) {
     pinMode(buttonPins[i], INPUT);
   }
 
+  // init serial connection
   Serial.begin(9600);
 
   // The DMX shield v1.1 has the Dmx pin on nr 11
   DmxSimple.usePin(11);
 
-  // turn everything off at the start
+  // turn all strips off at the start
   setBrightnessAll(0);
 }
 
 void loop() {
-  int readValue[3];
-  int readTime = millis();
-
+  // a loop to update the button state.
   for (int i = 0; i < 3; i++) {
-    readValue[i] = digitalRead(buttonPins[i]);
+    // read the buttons and time.
+    int readValue = digitalRead(buttonPins[i]);
+    int readTime = millis();
 
     // Check if a button has been released
-    if (readValue[i] == 0 && buttonState[i] && readTime - lastPress[i] > debounceDelay) {
+    if (readValue == 0 && buttonState[i] && readTime - lastPress[i] > debounceDelay) {
       Serial.print("Button ");
       Serial.print(i);
       Serial.println(" is released");
@@ -69,7 +69,7 @@ void loop() {
     }
 
     // Check if a button has been pressed
-    if (readValue[i] == 1 && !buttonState[i] && readTime - lastPress[i] > debounceDelay) {
+    if (readValue == 1 && !buttonState[i] && readTime - lastPress[i] > debounceDelay) {
       // handle the button press
       Serial.print("Button ");
       Serial.print(i);
@@ -77,11 +77,12 @@ void loop() {
       buttonState[i] = true;
       lastPress[i] = millis();
 
+      // Do things on press
+
+
       // Set state for animations
       state = i;
-
-      // Do additional things on press
-
+      
       // reset lights on button press
       setBrightnessAll(0);
 
@@ -131,10 +132,13 @@ int maxNextLightningBatchDelay = 15000; // max time between 2 lightning batches
 boolean isBatchRunning = true;
 
 void updateLightningAnimation() {
-  // Check if a lightningbatch is going on
-  if (millis() - startLightningBatch < lightningBatchLength) {
+  // Check if a batch should start
+  if(millis() > startLightningBatch && !isBatchRunning) {
     isBatchRunning = true;
-    
+  }
+  
+  // Check if a lightningbatch is going on
+  if (isBatchRunning) {
     //inside that batch, do several lightnings
     if (millis() > nextLightning) {
       strength = 55 + random(200);
