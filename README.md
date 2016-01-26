@@ -12,7 +12,7 @@ Each strip can be individually controlled with the DMX protocol. There are sever
 Use an Arduino to control the installation. This example features three example animations and some powerful functions to create your own programs.
 
 ## Hardware
-In order to control the installation you will need an Arduino with a Dmx interface. If you are a student at the TU/e you may borrow a Dmx interface from the lightlab (scroll down for email address).
+In order to control the installation you will need an Arduino with a Dmx shield. If you are a student at the TU/e you may borrow a Dmx shield from the lightlab (scroll down for email address).
 
 ### Hardware components:
 1. Arduino Uno.
@@ -38,8 +38,15 @@ The program is fully commented and should explain itself. For extra explanation 
 https://github.com/LightLabTUe/BasementLight/tree/master/Arduino 
 
 # USB
+Another option is to use the USB port on your computer. For this option you will need:
 
-- coming soon -
+- A USB to DMX serial interface* (QuickDMX D512)
+- QuickDMX: http://download.thelightingcontroller.com/software/V7/QuickDmx/
+- Optional: the example: 
+
+If you are a student at the TU/e you may borrow a this interface from the lightlab (scroll down for email address). 
+
+* Other DMX interfaces will also work, just not with the example.
 
 # Help
 

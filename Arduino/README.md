@@ -4,7 +4,7 @@
 The program is fully commented and should explain itself. However if itisn't clear then this might section help. This is an overview of the functions of the program.
 
 ### Dependencies
-All dependencies are included in the libraries folder.
+All dependencies are included in the libraries folder. If for some reason you want to download them separately, then you can find them here.
 - DmxSimple: https://github.com/Cathedrow/DmxSimple
 
 ### Functions
